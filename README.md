@@ -25,7 +25,7 @@ Find Your Blended Hogwarts House is a magical React application that sorts you i
 
 ## 🦉 Try it out now!!
 
-Project Link: 
+Project Link: [https://mina1957.github.io/hogwarts-house-quiz/]([url](https://mina1957.github.io/hogwarts-house-quiz/))
 
 ## 🧳 Packing Your Trunk (Installation)
 
