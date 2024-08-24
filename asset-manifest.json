@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/hogwarts-house-quiz/static/css/main.a0a26c67.css",
-    "main.js": "/hogwarts-house-quiz/static/js/main.54a0f213.js",
+    "main.css": "/hogwarts-house-quiz/static/css/main.3008cf0b.css",
+    "main.js": "/hogwarts-house-quiz/static/js/main.e36cfb28.js",
     "static/js/453.e83734c7.chunk.js": "/hogwarts-house-quiz/static/js/453.e83734c7.chunk.js",
     "index.html": "/hogwarts-house-quiz/index.html",
-    "main.a0a26c67.css.map": "/hogwarts-house-quiz/static/css/main.a0a26c67.css.map",
-    "main.54a0f213.js.map": "/hogwarts-house-quiz/static/js/main.54a0f213.js.map",
+    "main.3008cf0b.css.map": "/hogwarts-house-quiz/static/css/main.3008cf0b.css.map",
+    "main.e36cfb28.js.map": "/hogwarts-house-quiz/static/js/main.e36cfb28.js.map",
     "453.e83734c7.chunk.js.map": "/hogwarts-house-quiz/static/js/453.e83734c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0a26c67.css",
-    "static/js/main.54a0f213.js"
+    "static/css/main.3008cf0b.css",
+    "static/js/main.e36cfb28.js"
   ]
 }
