@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { AlertCircle } from 'lucide-react';
 import * as RadioGroup from '@radix-ui/react-radio-group';
+import { useTransition, animated } from 'react-spring';
+import WelcomeScreen from './WelcomeScreen';
 
 interface Answer {
   id: string;
@@ -152,12 +154,28 @@ const HouseIcon: React.FC<{ house: string }> = ({ house }) => {
   }
 };
 
+const TransitionComponent: React.FC<{ show: boolean; children: React.ReactNode }> = ({ show, children }) => {
+  const transitions = useTransition(show, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    config: { duration: 500 },
+  });
+
+  return transitions((style, item) => item && <animated.div style={style}>{children}</animated.div>);
+};
+
 const HogwartsHouseQuiz: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
   const [result, setResult] = useState<string | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState<string | undefined>(undefined);
+  const [showQuiz, setShowQuiz] = useState(false);
+
+  const startQuiz = () => {
+    setShowQuiz(true);
+  };
 
   const handleAnswer = (answerId: string) => {
     const selectedHouse = questions[currentQuestion].answers.find(a => a.id === answerId)?.house;
@@ -190,6 +208,7 @@ const HogwartsHouseQuiz: React.FC = () => {
   };
 
   const resetQuiz = () => {
+    setShowQuiz(false);
     setCurrentQuestion(0);
     setAnswers([]);
     setResult(null);
@@ -209,6 +228,10 @@ const HogwartsHouseQuiz: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4">
       <div className="w-full max-w-2xl mx-auto bg-white/30 backdrop-blur-md text-white rounded-lg overflow-hidden">
+      {!showQuiz ? (
+          <WelcomeScreen onStart={startQuiz} />
+        ) : (
+        <>
         <div className="text-center p-6">
           <h1 className="text-5xl font-bold mb-4 text-yellow-300">Blended Hogwarts House Quiz</h1>
           <p className="text-xl text-gray-200 italic">Discover your unique combination of Hogwarts houses!</p>
@@ -266,6 +289,8 @@ const HogwartsHouseQuiz: React.FC = () => {
             </div>
           )}
         </div>
+        </>
+        )}
       </div>
     </div>
   );
