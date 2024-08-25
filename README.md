@@ -75,12 +75,5 @@ Want to add your own magical touch to the Blended Hogwarts House Quiz? Contribut
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## 🙏 Acknowledgments
-
-- J.K. Rowling for creating the magical world of Harry Potter
-- The React and TypeScript communities for their excellent documentation and tools
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Radix UI](https://www.radix-ui.com/) for accessible React components
-- All the Hogwarts professors who inspired the questions (especially you, Dumbledore!)
 
 Remember, when in doubt, go to the library... or just try this quiz again!
