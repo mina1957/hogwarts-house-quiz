@@ -3,6 +3,7 @@ import { AlertCircle } from 'lucide-react';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import { useTransition, animated } from 'react-spring';
 import WelcomeScreen from './WelcomeScreen';
+import ShareButtons from './ShareButtons';
 
 interface Answer {
   id: string;
@@ -115,6 +116,56 @@ const questions: Question[] = [
       { id: 'q10a2', text: "Draught of Peace: to never be stressed again.", house: "Hufflepuff" },
       { id: 'q10a3', text: "Polyjuice Potion: to change appearance and explore places where the access is restricted.", house: "Gryffindor" },
       { id: 'q10a4', text: "Felix Felicis: Liquid Luck to succeed in all your endeavours.", house: "Slytherin" }
+    ]
+  },
+  {
+    id: 'q11',
+    text: "You're faced with a challenging magical puzzle. How do you approach it?",
+    answers: [
+      { id: 'q11a1', text: "Dive right in and try different solutions until one works", house: "Gryffindor" },
+      { id: 'q11a2', text: "Carefully analyze each component before attempting a solution", house: "Ravenclaw" },
+      { id: 'q11a3', text: "Ask friends for help and work on it together", house: "Hufflepuff" },
+      { id: 'q11a4', text: "Find a way to bypass the puzzle entirely", house: "Slytherin" }
+    ]
+  },
+  {
+    id: 'q12',
+    text: "What would you do if you found a lost first-year student crying in the hallway?",
+    answers: [
+      { id: 'q12a1', text: "Comfort them and help them find their way", house: "Hufflepuff" },
+      { id: 'q12a2', text: "Give them directions and advice on how to navigate the castle", house: "Ravenclaw" },
+      { id: 'q12a3', text: "Take charge and personally escort them to where they need to go", house: "Gryffindor" },
+      { id: 'q12a4', text: "Tell a prefect or teacher about the situation", house: "Slytherin" }
+    ]
+  },
+  {
+    id: 'q13',
+    text: "During a Quidditch match, you spot the opposing team cheating. What do you do?",
+    answers: [
+      { id: 'q13a1', text: "Immediately call them out and demand fair play", house: "Gryffindor" },
+      { id: 'q13a2', text: "Secretly plan a way to counter their cheating without getting caught", house: "Slytherin" },
+      { id: 'q13a3', text: "Report it to the referee and let them handle it", house: "Hufflepuff" },
+      { id: 'q13a4', text: "Analyze the situation to find a strategic advantage within the rules", house: "Ravenclaw" }
+    ]
+  },
+  {
+    id: 'q14',
+    text: "You've been given a difficult assignment with a tight deadline. How do you handle it?",
+    answers: [
+      { id: 'q14a1', text: "Pull an all-nighter to get it done, no matter what", house: "Gryffindor" },
+      { id: 'q14a2', text: "Create a detailed schedule and stick to it rigorously", house: "Ravenclaw" },
+      { id: 'q14a3', text: "Ask classmates to form a study group and work together", house: "Hufflepuff" },
+      { id: 'q14a4', text: "Find creative shortcuts or persuade the professor for an extension", house: "Slytherin" }
+    ]
+  },
+  {
+    id: 'q15',
+    text: "If you could add one room to Hogwarts, what would it be?",
+    answers: [
+      { id: 'q15a1', text: "A dueling arena for practicing defensive spells", house: "Gryffindor" },
+      { id: 'q15a2', text: "An enormous library with books from around the magical world", house: "Ravenclaw" },
+      { id: 'q15a3', text: "A cozy common room where all houses can mingle", house: "Hufflepuff" },
+      { id: 'q15a4', text: "A secret passage leading to exclusive magical opportunities", house: "Slytherin" }
     ]
   }
 ];
@@ -255,6 +306,12 @@ const HogwartsHouseQuiz: React.FC = () => {
                   Your unique blend of houses makes you a truly exceptional student at Hogwarts!
                 </p>
               </div>
+              <ShareButtons 
+                url={window.location.href}
+                title={`I'm a ${result} blend in the Hogwarts House Quiz!`}
+                hashtags={['HogwartsHouseQuiz', 'HarryPotter']}
+                result={result}
+              />
               <button
                 onClick={resetQuiz}
                 className="bg-transparent border border-white text-white hover:bg-white hover:text-purple-900 transition-colors text-xl py-6 px-8 rounded cursor-pointer"
