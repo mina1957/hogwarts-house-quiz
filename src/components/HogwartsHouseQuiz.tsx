@@ -168,6 +168,16 @@ const questions: Question[] = [
       { id: 'q15a4', text: "A secret passage leading to exclusive magical opportunities", house: "Slytherin" }
     ]
   }
+  {
+    id: 'q16',
+    text: "If you could add one room to Hogwarts, what would it be?",
+    answers: [
+      { id: 'q16a1', text: "A dueling arena for practicing defensive spells", house: "Gryffindor" },
+      { id: 'q16a2', text: "An enormous library with books from around the magical world", house: "Ravenclaw" },
+      { id: 'q16a3', text: "A cozy common room where all houses can mingle", house: "Hufflepuff" },
+      { id: 'q16a4', text: "A secret passage leading to exclusive magical opportunities", house: "Slytherin" }
+    ]
+  }
 ];
 
 const HouseIcon: React.FC<{ house: string }> = ({ house }) => {
